@@ -29,7 +29,7 @@ export default function TopBar() {
 
 const styles = StyleSheet.create({
     wrapper: {
-        backgroundColor: '#14181C',
+        backgroundColor: '#000000',
         borderBottomWidth: 1,
         borderBottomColor: '#2A2F35',
     },

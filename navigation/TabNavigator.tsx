@@ -1,3 +1,4 @@
+import SearchScreen from '@/screens/SearchScreen';
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, View } from 'react-native';
@@ -35,7 +36,7 @@ export default function TabNavigator() {
                 })}
             >
                 <Tab.Screen name="Home" component={HomeScreen} />
-                <Tab.Screen name="Search" component={HomeScreen} />
+                <Tab.Screen name="Search" component={SearchScreen} />
                 <Tab.Screen name="Create" component={HomeScreen} />
                 <Tab.Screen name="Activity" component={ActivityScreen} />
                 <Tab.Screen name="Profile" component={ProfileScreen} />

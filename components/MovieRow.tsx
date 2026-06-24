@@ -3,7 +3,7 @@ import MoviePoster from './MoviePoster';
 
 type MovieRowProps = {
     title: string;
-    data: { id: number; poster: ImageSourcePropType }[];
+    data: { id: number; poster: ImageSourcePropType; user?: string; rating?: string }[];
 };
 
 export default function MovieRow({ title, data }: MovieRowProps) {
@@ -16,7 +16,7 @@ export default function MovieRow({ title, data }: MovieRowProps) {
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 keyExtractor={(item) => item.id.toString()}
-                renderItem={({ item }) => <MoviePoster poster={item.poster} />}
+                renderItem={({ item }) => <MoviePoster poster={item.poster} user={item.user} rating={item.rating} />}
             />
         </View>
     );
@@ -25,6 +25,7 @@ export default function MovieRow({ title, data }: MovieRowProps) {
 const styles = StyleSheet.create({
     container: {
         marginTop: 20,
+        paddingHorizontal: 11,
     },
     title: {
         color: 'white',
