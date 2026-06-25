@@ -1,5 +1,6 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import ScreenWrapper from '../components/ScreenWrapper';
 
 export default function SearchScreen() {
     const browseItems = [
@@ -16,9 +17,11 @@ export default function SearchScreen() {
     ];
 
     return (
+        <ScreenWrapper>
         <ScrollView
             style={styles.container}
-            contentContainerStyle={{ paddingBottom: 120 }}
+            contentContainerStyle={{ paddingBottom: 120 }} 
+            stickyHeaderIndices={[0]}
         >
             {/* Black Header */}
             <View style={styles.headerContainer}>
@@ -34,6 +37,7 @@ export default function SearchScreen() {
                         style={styles.searchInput}
                     />
                 </View>
+                
 
             </View>
 
@@ -79,6 +83,7 @@ export default function SearchScreen() {
             </View>
 
         </ScrollView>
+        </ScreenWrapper>
     );
 }
 
@@ -86,11 +91,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#1c2125',
+        height: 60,
     },
 
     headerContainer: {
         backgroundColor: 'black',
-        paddingTop: 20,
+        paddingTop: 5,
         paddingBottom: 20,
         paddingHorizontal: 16,
         alignItems: 'center',
@@ -98,7 +104,7 @@ const styles = StyleSheet.create({
 
     header: {
         color: '#d3cdcd',
-        fontSize: 22,
+        fontSize: 20,
         fontWeight: '700',
         marginBottom: 16,
         textAlign: 'center',
@@ -107,6 +113,7 @@ const styles = StyleSheet.create({
     searchBar: {
         backgroundColor: '#434a52',
         width: '100%',
+        height: 40,
         paddingVertical: 12,
         paddingHorizontal: 14,
         borderRadius: 14,
@@ -181,3 +188,4 @@ const styles = StyleSheet.create({
     },
 
 });
+

@@ -1,15 +1,17 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import ScreenWrapper from '../components/ScreenWrapper';
 
 export default function ProfileScreen() {
     return (
-        <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 120 }}>
+        <ScreenWrapper>
+        <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 120 }} >
 
             {/* Header*/}
-            <View style={styles.header}>
+            <View style={styles.header} >
                 <Ionicons name="settings-outline" size={27} color="#9aa0a6" />
                 <Text style={styles.headerText}>misty</Text>
-                <Ionicons name="ellipsis-horizontal-outline" size={32} color="#9aa0a6" />
+                <Ionicons name="ellipsis-horizontal-outline" size={26} color="#9aa0a6" />
             </View>
 
             {/* Tabs Row */}
@@ -115,12 +117,14 @@ export default function ProfileScreen() {
 
             </View>
         </ScrollView>
+        </ScreenWrapper>
     );
 }
 const styles = StyleSheet.create({
     /* Page */
     container: {
         flex: 1,
+        height: 60,
         backgroundColor: '#1c2125',
     },
 
@@ -149,11 +153,10 @@ const styles = StyleSheet.create({
 
     headerText: {
         color: '#d6d6d6',
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: '700',
         textAlign: 'center',
         flex: 1,
-        letterSpacing: 1.6,
     },
 
     /* Tabs */
@@ -184,7 +187,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingVertical: 6,
+        paddingVertical: 4,
     },
 
     activeTabItem: {

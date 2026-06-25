@@ -1,6 +1,7 @@
 import { ScrollView, StyleSheet } from 'react-native';
 import MovieRow from '../components/MovieRow';
-import TopBar from '../components/TopBar';
+import TopBar from '../components/PageTopBars/TopBar';
+import ScreenWrapper from '../components/ScreenWrapper';
 
 const movie1 = require('../assets/movies/movie1.jpg');
 const movie2 = require('../assets/movies/movie2.jpg');
@@ -19,7 +20,7 @@ export default function HomeScreen() {
 
     const friends = [
         { id: 7, poster: require('../assets/movies/movie1.jpg'), user: "jark", rating: "★★★★½" },
-        { id: 8, poster: require('../assets/movies/movie1.jpg'), user: "anaya", rating: "★★★★★"},
+        { id: 8, poster: require('../assets/movies/movie1.jpg'), user: "anaya", rating: "★★★★★" },
     ];
 
     const forYou = [
@@ -29,13 +30,17 @@ export default function HomeScreen() {
     ];
 
     return (
-        <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 100 }} >
-            <TopBar />
+        <ScreenWrapper>
+        <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 100 }} stickyHeaderIndices={[0]}>
+                <TopBar />
 
             <MovieRow title="Popular This Week" data={popular} />
             <MovieRow title="New From Friends" data={friends} />
             <MovieRow title="Trending For You" data={forYou} />
+
         </ScrollView>
+        </ScreenWrapper>
+
     );
 }
 

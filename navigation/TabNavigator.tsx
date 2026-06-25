@@ -28,7 +28,7 @@ export default function TabNavigator() {
                         return (
                             <Ionicons
                                 name={icons[route.name as keyof typeof icons]}
-                                size={30}
+                                size={25}
                                 color={color}
                             />
                         );

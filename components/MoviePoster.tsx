@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   poster: {
-    width: 120,
-    height: 180,
+    width: 100,
+    height: 155,
     borderRadius: 8,
   },
   info: {
