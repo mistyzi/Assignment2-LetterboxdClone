@@ -18,7 +18,6 @@ export default function ProfileScreen() {
             <View style={styles.tabsWrapper}>
                 <View style={styles.tabsRow}>
 
-                    {/* ACTIVE TAB */}
                     <TouchableOpacity style={[styles.tabItem, styles.activeTabItem]}>
                         <Text style={styles.activeTabText}>Profile</Text>
                     </TouchableOpacity>
@@ -38,9 +37,7 @@ export default function ProfileScreen() {
                 </View>
             </View>
 
-
             <View style={styles.dividerTab} />
-
 
             <View style={styles.content}>
                 {/* Profile Pic */}
@@ -50,7 +47,6 @@ export default function ProfileScreen() {
                         style={styles.avatar}
                     />
                 </View>
-
 
                 {/* Favorites Section */}
                 <Text style={styles.sectionTitle}>FAVORITES</Text>

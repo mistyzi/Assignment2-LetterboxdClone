@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-
 export default function TopBar() {
     const [active, setActive] = useState('Films');
-
     const tabs = ['Films', 'Reviews', 'Lists', 'Journal'];
 
     return (
