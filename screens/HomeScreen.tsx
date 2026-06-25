@@ -13,17 +13,19 @@ export default function HomeScreen() {
         { id: 2, poster: require('../assets/movies/movie1.jpg') },
         { id: 3, poster: require('../assets/movies/movie3.jpg') },
         { id: 4, poster: require('../assets/movies/movie2.jpg') },
+        { id: 5, poster: require('../assets/movies/movie5.jpg') },
+        { id: 6, poster: require('../assets/movies/movie6.jpg') },
     ];
 
     const friends = [
-        { id: 5, poster: require('../assets/movies/movie1.jpg'), user: "jark", rating: "★★★★½" },
-        { id: 6, poster: require('../assets/movies/movie1.jpg'), user: "anaya", rating: "★★★★★"},
+        { id: 7, poster: require('../assets/movies/movie1.jpg'), user: "jark", rating: "★★★★½" },
+        { id: 8, poster: require('../assets/movies/movie1.jpg'), user: "anaya", rating: "★★★★★"},
     ];
 
     const forYou = [
-        { id: 7, poster: require('../assets/movies/foryou1.jpg') },
-        { id: 8, poster: require('../assets/movies/foryou2.jpg') },
-        { id: 9, poster: require('../assets/movies/foryou3.jpg') },
+        { id: 9, poster: require('../assets/movies/foryou1.jpg') },
+        { id: 10, poster: require('../assets/movies/foryou2.jpg') },
+        { id: 11, poster: require('../assets/movies/foryou3.jpg') },
     ];
 
     return (
