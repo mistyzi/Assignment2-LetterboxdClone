@@ -1,16 +1,20 @@
+import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-export default function TopBar() {
-    const [active, setActive] = useState('Films');
-    const tabs = ['Films', 'Reviews', 'Lists', 'Journal'];
+export default function ProfileTopBar() {
+    const [active, setActive] = useState('Profile');
+
+    const tabs = ['Profile', 'Diary', 'Lists', 'Watchlist'];
 
     return (
         <View style={styles.wrapper}>
 
-            {/* Title */}
-            <View style={styles.titleContainer}>
-                <Text style={styles.title}>Letterboxd</Text>
+            {/* Header Row */}
+            <View style={styles.header}>
+                <Ionicons name="settings-outline" size={26} color="#9aa0a6" />
+                <Text style={styles.headerText}>misty</Text>
+                <Ionicons name="ellipsis-horizontal-outline" size={28} color="#9aa0a6" />
             </View>
 
             {/* Tabs */}
@@ -37,31 +41,32 @@ export default function TopBar() {
 }
 
 const styles = StyleSheet.create({
-    /* Page */
     wrapper: {
         backgroundColor: '#000000',
         borderBottomWidth: 1,
         borderBottomColor: '#2A2F35',
     },
 
-    /* Title */
-    titleContainer: {
+    /* Header Row */
+    header: {
         paddingTop: 12,
-        paddingBottom: 6,
+        paddingBottom: 2,
+        paddingHorizontal: 16,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
         alignItems: 'center',
     },
 
-    title: {
+    headerText: {
         color: 'white',
-        fontSize: 30,
+        fontSize: 22,
         fontWeight: '700',
-        marginBottom: -5,
     },
 
     /* Tabs */
     tabsOuter: {
         backgroundColor: 'black',
-        paddingVertical: 10,
+        paddingVertical: 15,
     },
 
     tabsInner: {
@@ -104,12 +109,5 @@ const styles = StyleSheet.create({
     activeLabel: {
         color: '#b0b4b8',
         fontWeight: '700',
-    },
-
-    tabsContainer: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        gap: 26,
-        paddingVertical: 10,
     },
 });

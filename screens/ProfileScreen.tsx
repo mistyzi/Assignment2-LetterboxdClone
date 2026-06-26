@@ -1,118 +1,132 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import ProfileTopBar from '@/components/PageTopBars/ProfileTopBar';
+import { Ionicons } from '@expo/vector-icons';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import ScreenWrapper from '../components/ScreenWrapper';
 
 export default function ProfileScreen() {
     return (
         <ScreenWrapper>
-        <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 120 }} >
+            <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 60 }} >
+                <View style={{ flex: 1 }}>
+                    <ProfileTopBar />
 
-            {/* Header*/}
-            <View style={styles.header} >
-                <Ionicons name="settings-outline" size={27} color="#9aa0a6" />
-                <Text style={styles.headerText}>misty</Text>
-                <Ionicons name="ellipsis-horizontal-outline" size={26} color="#9aa0a6" />
-            </View>
+                    <View style={styles.dividerTab} />
 
-            {/* Tabs Row */}
-            <View style={styles.tabsWrapper}>
-                <View style={styles.tabsRow}>
+                    <View style={styles.content}>
+                        {/* Profile Pic */}
+                        <View style={styles.profileRow}>
+                            <Image
+                                source={require('../assets/pictures/pfp.jpg')}
+                                style={styles.avatar}
+                            />
+                        </View>
 
-                    <TouchableOpacity style={[styles.tabItem, styles.activeTabItem]}>
-                        <Text style={styles.activeTabText}>Profile</Text>
-                    </TouchableOpacity>
+                        {/* Favorites Section */}
+                        <Text style={styles.sectionTitle}>FAVORITES</Text>
 
-                    <TouchableOpacity style={styles.tabItem}>
-                        <Text style={styles.tabText}>Diary</Text>
-                    </TouchableOpacity>
+                        <View style={styles.favoritesRow}>
+                            <Image
+                                source={require('../assets/profileMovies/pearl.jpg')}
+                                style={styles.favoritePoster}
+                            />
+                            <Image
+                                source={require('../assets/profileMovies/words.jpg')}
+                                style={styles.favoritePoster}
+                            />
+                            <Image
+                                source={require('../assets/profileMovies/lisa.jpg')}
+                                style={styles.favoritePoster}
+                            />
+                            <Image
+                                source={require('../assets/profileMovies/eternal.jpg')}
+                                style={styles.favoritePoster}
+                            />
+                        </View>
+                        <View style={styles.divider} />
 
-                    <TouchableOpacity style={styles.tabItem}>
-                        <Text style={styles.tabText}>Lists</Text>
-                    </TouchableOpacity>
+                        {/* Recent Activity */}
+                        <Text style={styles.sectionTitle}>RECENT ACTIVITY</Text>
 
-                    <TouchableOpacity style={styles.tabItem}>
-                        <Text style={styles.tabText}>Watchlist</Text>
-                    </TouchableOpacity>
+                        <View style={styles.recentRow}>
+                            <View style={styles.recentItem}>
+                                <Image
+                                    source={require('../assets/movies/movie1.jpg')}
+                                    style={styles.recentPoster}
+                                />
+                                <Text style={styles.ratingText}>★★★★★</Text>
+                            </View>
 
-                </View>
-            </View>
+                            <View style={styles.recentItem}>
+                                <Image
+                                    source={require('../assets/profileMovies/rainbowrocks.jpg')}
+                                    style={styles.recentPoster}
+                                />
+                                <Text style={styles.ratingText}>★★★★½</Text>
+                            </View>
 
-            <View style={styles.dividerTab} />
+                            <View style={styles.recentItem}>
+                                <Image
+                                    source={require('../assets/profileMovies/equestriagirls.jpg')}
+                                    style={styles.recentPoster}
+                                />
+                                <Text style={styles.ratingText}>★★★★★</Text>
+                            </View>
 
-            <View style={styles.content}>
-                {/* Profile Pic */}
-                <View style={styles.profileRow}>
-                    <Image
-                        source={require('../assets/pictures/pfp.jpg')}
-                        style={styles.avatar}
-                    />
-                </View>
+                            <View style={styles.recentItem}>
+                                <Image
+                                    source={require('../assets/profileMovies/forbiddenfruits.jpg')}
+                                    style={styles.recentPoster}
+                                />
+                                <Text style={styles.ratingText}>★★★★</Text>
+                            </View>
+                        </View>
+                        <View style={styles.divider} />
 
-                {/* Favorites Section */}
-                <Text style={styles.sectionTitle}>FAVORITES</Text>
+                        {/* More Activity Title */}
+                        <View style={styles.moreActivityHeader}>
+                            <Text style={styles.moreActivityText}>More activity</Text>
+                            <Ionicons
+                                name="chevron-forward"
+                                size={18}
+                                color="#7A7D80"
+                                style={{ marginLeft: 6 }}
+                            />
+                        </View>
+                        <View style={styles.divider} />
 
-                <View style={styles.favoritesRow}>
-                    <Image
-                        source={require('../assets/profileMovies/pearl.jpg')}
-                        style={styles.favoritePoster}
-                    />
-                    <Image
-                        source={require('../assets/profileMovies/words.jpg')}
-                        style={styles.favoritePoster}
-                    />
-                    <Image
-                        source={require('../assets/profileMovies/lisa.jpg')}
-                        style={styles.favoritePoster}
-                    />
-                    <Image
-                        source={require('../assets/profileMovies/eternal.jpg')}
-                        style={styles.favoritePoster}
-                    />
-                </View>
+                        {/* Activity Graph */}
+                        <View style={styles.graphContainer}>
 
-                <View style={styles.divider} />
+                            {/* Left star */}
+                            <Ionicons name="star" size={10} color="#4CAF50" style={{ marginRight: 6 }} />
 
-                {/* Recent Activity */}
-                <Text style={styles.sectionTitle}>RECENT ACTIVITY</Text>
+                            {/* Bars */}
+                            <View style={styles.barsRow}>
+                                <View style={[styles.bar, { height: 5 }]} />
+                                <View style={[styles.bar, { height: 15}]} />
+                                <View style={[styles.bar, { height: 2 }]} />
+                                <View style={[styles.bar, { height: 15 }]} />
+                                <View style={[styles.bar, { height: 11 }]} />
+                                <View style={[styles.bar, { height: 22 }]} />
+                                <View style={[styles.bar, { height: 26 }]} />
+                                <View style={[styles.bar, { height: 45 }]} />
+                                <View style={[styles.bar, { height: 26 }]} />
+                                <View style={[styles.bar, { height: 45 }]} />
+                            </View>
 
-                <View style={styles.recentRow}>
-                    <View style={styles.recentItem}>
-                        <Image
-                            source={require('../assets/movies/movie1.jpg')}
-                            style={styles.recentPoster}
-                        />
-                        <Text style={styles.ratingText}>★★★★★</Text>
+                            {/* Right stars */}
+                            <View style={styles.starGroup}>
+                                <Ionicons name="star" size={10} color="#4CAF50" />
+                                <Ionicons name="star" size={10} color="#4CAF50" />
+                                <Ionicons name="star" size={10} color="#4CAF50" />
+                                <Ionicons name="star" size={10} color="#4CAF50" />
+                                <Ionicons name="star" size={10} color="#4CAF50" />
+                            </View>
+                        </View>
                     </View>
-
-                    <View style={styles.recentItem}>
-                        <Image
-                            source={require('../assets/profileMovies/rainbowrocks.jpg')}
-                            style={styles.recentPoster}
-                        />
-                        <Text style={styles.ratingText}>★★★★½</Text>
-                    </View>
-
-                    <View style={styles.recentItem}>
-                        <Image
-                            source={require('../assets/profileMovies/equestriagirls.jpg')}
-                            style={styles.recentPoster}
-                        />
-                        <Text style={styles.ratingText}>★★★★★</Text>
-                    </View>
-
-                    <View style={styles.recentItem}>
-                        <Image
-                            source={require('../assets/profileMovies/forbiddenfruits.jpg')}
-                            style={styles.recentPoster}
-                        />
-                        <Text style={styles.ratingText}>★★★★</Text>
-                    </View>
+                    <View style={styles.divider} />
                 </View>
-
-                <View style={styles.divider} />
-
-            </View>
-        </ScrollView>
+            </ScrollView>
         </ScreenWrapper>
     );
 }
@@ -120,12 +134,12 @@ const styles = StyleSheet.create({
     /* Page */
     container: {
         flex: 1,
-        height: 60,
         backgroundColor: '#1c2125',
     },
 
     content: {
         paddingHorizontal: 16,
+        paddingBottom: 1
     },
 
     divider: {
@@ -135,75 +149,10 @@ const styles = StyleSheet.create({
         marginVertical: 16,
     },
 
-    /* Header */
-    header: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingTop: 15,
-        alignItems: 'center',
-        backgroundColor: 'black',
-        width: '100%',
-        paddingHorizontal: 16,
-        paddingBottom: 10,
-    },
-
-    headerText: {
-        color: '#d6d6d6',
-        fontSize: 18,
-        fontWeight: '700',
-        textAlign: 'center',
-        flex: 1,
-    },
-
-    /* Tabs */
-    tabsWrapper: {
-        backgroundColor: 'black',
-        width: '100%',
-        paddingBottom: 14,
-        paddingHorizontal: 16,
-    },
-
-    tabsRow: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        backgroundColor: '#1b1d1f',
-        paddingHorizontal: 12,
-        width: '100%',
-        borderRadius: 10,
-    },
-
-    tabItem: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: 4,
-    },
-
-    activeTabItem: {
-        backgroundColor: '#434a52',
-        borderRadius: 10,
-        marginLeft: -12,
-    },
-
-    activeTabText: {
-        color: '#b0b4b8',
-        fontSize: 16,
-        fontWeight: '700',
-        letterSpacing: 1,
-    },
-
     dividerTab: {
         height: 1,
         backgroundColor: '#3a3f45',
         width: '100%',
-    },
-
-    tabText: {
-        color: '#9aa0a6',
-        fontSize: 16,
-        fontWeight: '600',
-        letterSpacing: 1,
     },
 
     /* Profile Pic */
@@ -268,7 +217,43 @@ const styles = StyleSheet.create({
         letterSpacing: 1,
     },
 
+    /* Activity Title */
+    moreActivityHeader: {
+        paddingHorizontal: 3,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+
+    moreActivityText: {
+        color: '#9aa0a6',
+        fontSize: 18,
+    },
+
+    /* Activity */
+    graphContainer: {
+        flexDirection: 'row',
+        alignItems: 'flex-end',
+        justifyContent: 'center',
+        marginTop: 20,
+        gap: 10,
+    },
+
+    barsRow: {
+        flexDirection: 'row',
+        alignItems: 'flex-end',
+        gap: 2,
+    },
+
+    bar: {
+        width: 25,
+        backgroundColor: '#2f3540',
+    },
+
+    starGroup: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 2,
+    },
+
 });
-
-
-
