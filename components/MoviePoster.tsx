@@ -1,46 +1,52 @@
-import { Image, ImageSourcePropType, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 type MoviePosterProps = {
-  poster: ImageSourcePropType;
-  user?: string;
-  rating?: string;
+    poster: any;
+    user?: string;
+    rating?: string;
 };
 
 export default function MoviePoster({ poster, user, rating }: MoviePosterProps) {
-  return (
-    <TouchableOpacity style={styles.container}>
-      <Image source={poster} style={styles.poster} />
+    const navigation = useNavigation<any>();
 
-      {user && (
-        <View style={styles.info}>
-          <Text style={styles.user}>{user}</Text>
-          {rating && <Text style={styles.rating}>{rating}</Text>}
-        </View>
-      )}
-    </TouchableOpacity>
-  );
+    return (
+        <TouchableOpacity
+            style={styles.container}
+            onPress={() =>
+                navigation.navigate('MovieDetails', {
+                    poster,
+                    user,
+                    rating,
+                })
+            }
+        >
+            <Image source={poster} style={styles.poster} />
+
+            {/* Optional: username + rating under poster */}
+            {user && <Text style={styles.user}>{user}</Text>}
+            {rating && <Text style={styles.rating}>{rating}</Text>}
+        </TouchableOpacity>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginRight: 12,
-  },
-  poster: {
-    width: 100,
-    height: 155,
-    borderRadius: 8,
-  },
-  info: {
-    marginTop: 6,
-  },
-  user: {
-    color: 'white',
-    fontSize: 14,
-    fontWeight: 'bold',
-  },
-  rating: {
-    color: '#9aa0a6',
-    fontSize: 12,
-    marginTop: 2,
-  },
+    container: {
+        marginRight: 10,
+    },
+    poster: {
+        width: 110,
+        height: 165,
+        borderRadius: 6,
+    },
+    user: {
+        color: 'white',
+        marginTop: 4,
+        fontSize: 12,
+    },
+    rating: {
+        color: '#5f5f5f',
+        fontSize: 12,
+    },
 });
+

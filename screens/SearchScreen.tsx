@@ -18,81 +18,83 @@ export default function SearchScreen() {
 
     return (
         <ScreenWrapper>
-        <ScrollView
-            style={styles.container}
-            contentContainerStyle={{ paddingBottom: 120 }} 
-            stickyHeaderIndices={[0]}
-        >
-            {/* Black Header */}
-            <View style={styles.headerContainer}>
-                <Text style={styles.header}>Search</Text>
+            <ScrollView
+                style={styles.container}
+                contentContainerStyle={{ paddingBottom: 120 }}
+                stickyHeaderIndices={[0]}
+            >
+                {/* Black Header */}
+                <View style={styles.headerContainer}>
+                    <Text style={styles.header}>Search</Text>
 
-                {/* Search Bar */}
-                <View style={styles.searchBar}>
-                    <Ionicons name="search" size={18} color="#7A7D80" style={styles.searchIcon} />
+                    {/* Search Bar */}
+                    <View style={styles.searchBar}>
+                        <Ionicons name="search" size={18} color="#7A7D80" style={styles.searchIcon} />
 
-                    <TextInput
-                        placeholder="Find films, cast + crew, members, reviews…"
-                        placeholderTextColor="#7A7D80"
-                        style={styles.searchInput}
-                    />
+                        <TextInput
+                            placeholder="Find films, cast + crew, members, reviews…"
+                            placeholderTextColor="#7A7D80"
+                            style={styles.searchInput} />
+                    </View>
                 </View>
-                
 
-            </View>
+                {/* Browse By */}
+                <Text style={styles.sectionTitle}>Browse by</Text>
 
-            {/* Browse By */}
-            <Text style={styles.sectionTitle}>Browse by</Text>
+                <View style={styles.listContainer}>
+                    {browseItems.map((item, index) => (
+                        <View key={index}>
+                            <TouchableOpacity style={styles.listItem}>
+                                <Text style={styles.listText}>{item}</Text>
 
-            <View style={styles.listContainer}>
-                {browseItems.map((item, index) => (
-                    <View key={index}>
+                                {/* Right-side icon */}
+                                <Ionicons name="chevron-forward" size={18} color="#9aa0a6" />
+                            </TouchableOpacity>
+
+                            {/* Divider */}
+                            <View style={styles.divider} />
+                        </View>
+                    ))}
+                </View>
+
+                {/* Footer */}
+                <View style={styles.footer}>
+                    <Text style={styles.footerHeader}>Letterboxd.com</Text>
+
+                    {/* New here? */}
+                    <View>
                         <TouchableOpacity style={styles.listItem}>
-                            <Text style={styles.listText}>{item}</Text>
-
-                            {/* Right-side icon */}
+                            <Text style={styles.listText}>New here?</Text>
                             <Ionicons name="chevron-forward" size={18} color="#9aa0a6" />
                         </TouchableOpacity>
-
-                        {/* Divider */}
                         <View style={styles.divider} />
                     </View>
-                ))}
-            </View>
 
-            {/* Footer */}
-            <View style={styles.footer}>
-                <Text style={styles.footerHeader}>Letterboxd.com</Text>
-                {/* New here? */}
-                <View>
-                    <TouchableOpacity style={styles.listItem}>
-                        <Text style={styles.listText}>New here?</Text>
-                        <Ionicons name="chevron-forward" size={18} color="#9aa0a6" />
-                    </TouchableOpacity>
-                    <View style={styles.divider} />
+                    {/* Frequent questions */}
+                    <View>
+                        <TouchableOpacity style={styles.listItem}>
+                            <Text style={styles.listText}>Frequent questions</Text>
+                            <Ionicons name="chevron-forward" size={18} color="#9aa0a6" />
+                        </TouchableOpacity>
+                        <View style={styles.divider} />
+                    </View>
                 </View>
-
-                {/* Frequent questions */}
-                <View>
-                    <TouchableOpacity style={styles.listItem}>
-                        <Text style={styles.listText}>Frequent questions</Text>
-                        <Ionicons name="chevron-forward" size={18} color="#9aa0a6" />
-                    </TouchableOpacity>
-                    <View style={styles.divider} />
-                </View>
-            </View>
-
-        </ScrollView>
+            </ScrollView>
         </ScreenWrapper>
     );
 }
 
 const styles = StyleSheet.create({
+
+    /* Page */
+
     container: {
         flex: 1,
         backgroundColor: '#1c2125',
         height: 60,
     },
+
+    /* Header */
 
     headerContainer: {
         backgroundColor: 'black',
@@ -106,12 +108,14 @@ const styles = StyleSheet.create({
         color: '#d3cdcd',
         fontSize: 20,
         fontWeight: '700',
-        marginBottom: 16,
+        marginBottom: 10,
         textAlign: 'center',
     },
 
+    /* Search Bar */
+
     searchBar: {
-        backgroundColor: '#434a52',
+        backgroundColor: '#4f565e',
         width: '100%',
         height: 40,
         paddingVertical: 12,
@@ -131,6 +135,8 @@ const styles = StyleSheet.create({
         fontSize: 16,
         flex: 1,
     },
+
+    /* Search Items */
 
     sectionTitle: {
         color: '#d3cdcd',
@@ -162,6 +168,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#3a3f45',
         width: '100%',
     },
+
+    /* Footer */
 
     footer: {
         marginTop: 40,

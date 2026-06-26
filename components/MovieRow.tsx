@@ -1,3 +1,4 @@
+import { Ionicons } from '@expo/vector-icons';
 import { FlatList, ImageSourcePropType, StyleSheet, Text, View } from 'react-native';
 import MoviePoster from './MoviePoster';
 
@@ -9,7 +10,11 @@ type MovieRowProps = {
 export default function MovieRow({ title, data }: MovieRowProps) {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>{title}</Text>
+            <View style={styles.header}>
+                <Text style={styles.title}>{title}</Text>
+                <Ionicons name="chevron-forward" size={18} color="#7A7D80" />
+            </View>
+
 
             <FlatList
                 data={data}
@@ -27,10 +32,19 @@ const styles = StyleSheet.create({
         marginTop: 20,
         paddingHorizontal: 11,
     },
+
     title: {
         color: 'white',
         fontSize: 18,
         fontWeight: '700',
         marginBottom: 10,
     },
+
+    header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
+},
+
 });

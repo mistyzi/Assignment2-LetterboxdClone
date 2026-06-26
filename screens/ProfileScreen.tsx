@@ -173,12 +173,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
 
-    activeTab: {
-        backgroundColor: 'white',
-        borderBottomWidth: 2,
-        borderBottomColor: 'white',
-    },
-
     tabItem: {
         flex: 1,
         alignItems: 'center',

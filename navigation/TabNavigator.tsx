@@ -16,20 +16,27 @@ export default function TabNavigator() {
                     headerShown: false,
                     tabBarStyle: styles.tabBar,
                     tabBarShowLabel: false,
-                    tabBarIcon: ({ color, size }) => {
+
+                    tabBarActiveTintColor: '#03b8ff',
+                    tabBarInactiveTintColor: '#7A7D80',
+
+                    tabBarIcon: ({ color, focused }) => {
                         const icons = {
-                            Home: 'albums-sharp',
-                            Search: 'search',
-                            Create: 'add-circle-outline',
-                            Activity: 'flash',
-                            Profile: 'person',
+                            Home: focused ? 'albums' : 'albums-outline',
+                            Search: focused ? 'search' : 'search-outline',
+                            Create: focused ? 'add-circle' : 'add-circle-outline',
+                            Activity: focused ? 'flash' : 'flash-outline',
+                            Profile: focused ? 'person' : 'person-outline',
                         } as const;
+
+                        const isCreate = route.name === 'Create';
+                        const iconColor = isCreate ? '#00E054' : color;
 
                         return (
                             <Ionicons
                                 name={icons[route.name as keyof typeof icons]}
-                                size={25}
-                                color={color}
+                                size={30}
+                                color={iconColor}
                             />
                         );
                     },
@@ -51,11 +58,11 @@ const styles = StyleSheet.create({
         bottom: 0,
         left: 0,
         right: 0,
-        height: 80,
-        backgroundColor: '#434a52',
+        height: 70,
+        backgroundColor: '#46505c',
         borderTopWidth: 1,
         borderTopColor: '#2A2F35',
-        paddingBottom: 10,
-        paddingTop: 10,
+        paddingBottom: 15,
+        paddingTop: 5,
     },
 });
