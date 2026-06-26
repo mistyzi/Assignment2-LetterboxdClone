@@ -1,52 +1,54 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
+import SearchScreen from '@/screens/SearchScreen';
+import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import ActivityScreen from '../screens/ActivityScreen';
+import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import SearchScreen from '../screens/SearchScreen';
-import HomeStack from './HomeStack';
 
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigator() {
     return (
-        <Tab.Navigator
-            screenOptions={({ route }) => ({
-                headerShown: false,
-                tabBarShowLabel: false,
-                tabBarStyle: {
-                    backgroundColor: '#111',
-                    borderTopWidth: 0,
-                    height: 70,
-                },
-                tabBarIcon: ({ color, size }) => {
-                    const icons = {
-                        Home: 'home',
-                        Search: 'search',
-                        Create: 'add-circle',
-                        Activity: 'flash',
-                        Profile: 'person',
-                    } as const;
+        <View style={{ flex: 1 }}>
+            <Tab.Navigator
+                screenOptions={({ route }) => ({
+                    headerShown: false,
+                    tabBarStyle: styles.tabBar,
+                    tabBarShowLabel: false,
 
-                    const iconName = icons[route.name as keyof typeof icons];
+                    tabBarActiveTintColor: '#03b8ff',
+                    tabBarInactiveTintColor: '#7A7D80',
 
-                    return (
-                        <Ionicons
-                            name={iconName}
-                            size={28}
-                            color={color}
-                        />
-                    );
-                },
-                tabBarActiveTintColor: '#00E054',
-                tabBarInactiveTintColor: '#666',
-            })}
-        >
-            <Tab.Screen name="Home" component={HomeStack} />
-            <Tab.Screen name="Search" component={SearchScreen} />
-            <Tab.Screen name="Activity" component={ActivityScreen} />
-            <Tab.Screen name="Profile" component={ProfileScreen} />
-        </Tab.Navigator>
+                    tabBarIcon: ({ color, focused }) => {
+                        const icons = {
+                            Home: focused ? 'albums' : 'albums-outline',
+                            Search: focused ? 'search' : 'search-outline',
+                            Create: focused ? 'add-circle' : 'add-circle-outline',
+                            Activity: focused ? 'flash' : 'flash-outline',
+                            Profile: focused ? 'person' : 'person-outline',
+                        } as const;
+
+                        const isCreate = route.name === 'Create';
+                        const iconColor = isCreate ? '#00E054' : color;
+
+                        return (
+                            <Ionicons
+                                name={icons[route.name as keyof typeof icons]}
+                                size={30}
+                                color={iconColor}
+                            />
+                        );
+                    },
+                })}
+            >
+                <Tab.Screen name="Home" component={HomeScreen} />
+                <Tab.Screen name="Search" component={SearchScreen} />
+                <Tab.Screen name="Create" component={HomeScreen} />
+                <Tab.Screen name="Activity" component={ActivityScreen} />
+                <Tab.Screen name="Profile" component={ProfileScreen} />
+            </Tab.Navigator>
+        </View>
     );
 }
 
