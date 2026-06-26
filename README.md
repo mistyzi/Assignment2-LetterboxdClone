@@ -28,19 +28,7 @@ This project includes custom top bars, tab navigation, profile layout, activity 
   - `ActivityTopBar`
 - Rounded tab bars with active/inactive states
 - Grey activity cards for clean feed layout
+- Consistent SafeAreaView usage across screens
+- Sticky headers for top bars
 
-### Components
-- **PageTopBars/**
-  - `HomeBar.tsx`
-  - `ProfileBar.tsx`
-  - `ActivityBar.tsx`
-- **Activity Feed**
-  - Icons for likes, ratings, and watches
-  - Styled cards for each activity item
-
-### Placeholder Screens
-Used for incomplete pages required by the assignment:
-- Diary
-- Lists
-- Watchlist  
-Each uses a simple “Coming Soon” placeholder screen.
+Some screens (Lists, Journal, Reviews, Diary, Watchlist, You, Incoming,) intentionally do not work.
