@@ -1,4 +1,6 @@
+import type { RootStackParamList } from '@/navigation/types';
 import { useNavigation } from '@react-navigation/native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 type MoviePosterProps = {
@@ -8,13 +10,13 @@ type MoviePosterProps = {
 };
 
 export default function MoviePoster({ poster, user, rating }: MoviePosterProps) {
-    const navigation = useNavigation<any>();
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
     return (
         <TouchableOpacity
             style={styles.container}
             onPress={() =>
-                navigation.navigate('MovieDetails', {
+                (navigation as any).navigate('MovieDetails', {
                     poster,
                     user,
                     rating,
@@ -23,7 +25,6 @@ export default function MoviePoster({ poster, user, rating }: MoviePosterProps) 
         >
             <Image source={poster} style={styles.poster} />
 
-            {/* Optional: username + rating under poster */}
             {user && <Text style={styles.user}>{user}</Text>}
             {rating && <Text style={styles.rating}>{rating}</Text>}
         </TouchableOpacity>
@@ -49,4 +50,3 @@ const styles = StyleSheet.create({
         fontSize: 12,
     },
 });
-
