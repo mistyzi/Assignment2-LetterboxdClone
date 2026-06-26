@@ -16,13 +16,4 @@ This project includes custom top bars, tab navigation, profile layout, activity 
   - Search
   - Create (PlaceHolder)
 
-### UI & Styling
-- Fully custom **Letterboxd‑inspired** design
-- Dark theme
-- Reusable top bar components
-- Rounded tab bars with active/inactive states
-- Grey activity cards for clean feed layout
-- Consistent SafeAreaView usage across screens
-- Sticky headers for top bars
-
 Some screens (Lists, Journal, Reviews, Diary, Watchlist, You, Incoming,) intentionally do not work.
