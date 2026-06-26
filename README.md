@@ -7,7 +7,7 @@ This project includes custom top bars, tab navigation, profile layout, activity 
 ## Features
 
 ### Navigation
-- Multi‑page navigation using **React Navigation**
+- Multi‑page navigation using React Navigation
 - Screens include:
   - Home
   - Profile
