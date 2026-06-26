@@ -12,9 +12,9 @@ This project includes custom top bars, tab navigation, profile layout, activity 
   - Home
   - Profile
   - Activity
-  - Diary (placeholder)
-  - Lists (placeholder)
-  - Watchlist (placeholder)
+  - Movie Details
+  - Search
+  - Create (PlaceHolder)
 
 ### UI & Styling
 - Fully custom **Letterboxd‑inspired** design
