@@ -2,6 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
+
 export default function ProfileTopBar() {
     const [active, setActive] = useState('Profile');
 

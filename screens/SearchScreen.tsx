@@ -85,9 +85,7 @@ export default function SearchScreen() {
 }
 
 const styles = StyleSheet.create({
-
     /* Page */
-
     container: {
         flex: 1,
         backgroundColor: '#1c2125',
@@ -95,7 +93,6 @@ const styles = StyleSheet.create({
     },
 
     /* Header */
-
     headerContainer: {
         backgroundColor: 'black',
         paddingTop: 5,
@@ -103,7 +100,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
         alignItems: 'center',
     },
-
     header: {
         color: '#d3cdcd',
         fontSize: 20,
@@ -113,7 +109,6 @@ const styles = StyleSheet.create({
     },
 
     /* Search Bar */
-
     searchBar: {
         backgroundColor: '#4f565e',
         width: '100%',
@@ -125,11 +120,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         gap: 8,
     },
-
     searchIcon: {
         marginRight: 6,
     },
-
     searchInput: {
         color: 'white',
         fontSize: 16,
@@ -137,7 +130,6 @@ const styles = StyleSheet.create({
     },
 
     /* Search Items */
-
     sectionTitle: {
         color: '#d3cdcd',
         fontSize: 18,
@@ -146,23 +138,19 @@ const styles = StyleSheet.create({
         marginBottom: 6,
         paddingHorizontal: 16,
     },
-
     listContainer: {
         paddingHorizontal: 16,
     },
-
     listItem: {
         paddingVertical: 12,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
     },
-
     listText: {
         color: '#9aa0a6',
         fontSize: 16,
     },
-
     divider: {
         height: 1,
         backgroundColor: '#3a3f45',
@@ -170,20 +158,17 @@ const styles = StyleSheet.create({
     },
 
     /* Footer */
-
     footer: {
         marginTop: 40,
         marginBottom: 5,
         paddingHorizontal: 16,
     },
-
     footerHeader: {
         color: '#d3cdcd',
         fontSize: 20,
         fontWeight: '700',
         marginBottom: 1,
     },
-
     footerLink: {
         color: '#9aa0a6',
         fontSize: 15,
@@ -194,6 +179,4 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingVertical: 1,
     },
-
 });
-

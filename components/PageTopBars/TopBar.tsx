@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
         paddingBottom: 6,
         alignItems: 'center',
     },
-
     title: {
         color: 'white',
         fontSize: 30,
@@ -63,7 +62,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         paddingVertical: 10,
     },
-
     tabsInner: {
         backgroundColor: '#1A1A1A',
         marginHorizontal: 16,
@@ -71,41 +69,34 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         overflow: 'hidden',
     },
-
     tabWrapper: {
         flexDirection: 'row',
         flex: 1,
     },
-
     divider: {
         width: 1,
         height: '55%',
         alignSelf: 'center',
         backgroundColor: '#2A2F35',
     },
-
     tab: {
         flex: 1,
         paddingVertical: 8,
         alignItems: 'center',
     },
-
     label: {
         color: '#7A7D80',
         fontSize: 14,
         fontWeight: '600',
     },
-
     activeTab: {
         borderRadius: 7,
         backgroundColor: '#434a52',
     },
-
     activeLabel: {
         color: '#b0b4b8',
         fontWeight: '700',
     },
-
     tabsContainer: {
         flexDirection: 'row',
         justifyContent: 'center',

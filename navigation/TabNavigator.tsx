@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, View } from 'react-native';
 import ActivityScreen from '../screens/ActivityScreen';
 import HomeScreen from '../screens/HomeScreen';
+import IncompleteScreen from '../screens/IncompleteScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
@@ -44,7 +45,7 @@ export default function TabNavigator() {
             >
                 <Tab.Screen name="Home" component={HomeScreen} />
                 <Tab.Screen name="Search" component={SearchScreen} />
-                <Tab.Screen name="Create" component={HomeScreen} />
+                <Tab.Screen name="Create" component={IncompleteScreen} />
                 <Tab.Screen name="Activity" component={ActivityScreen} />
                 <Tab.Screen name="Profile" component={ProfileScreen} />
             </Tab.Navigator>

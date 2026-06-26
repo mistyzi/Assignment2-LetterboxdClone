@@ -136,19 +136,16 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#1c2125',
     },
-
     content: {
         paddingHorizontal: 16,
         paddingBottom: 1
     },
-
     divider: {
         height: 1,
         backgroundColor: '#3a3f45',
         width: '100%',
         marginVertical: 16,
     },
-
     dividerTab: {
         height: 1,
         backgroundColor: '#3a3f45',
@@ -164,7 +161,6 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 20,
     },
-
     avatar: {
         width: 80,
         height: 80,
@@ -179,37 +175,31 @@ const styles = StyleSheet.create({
         marginLeft: 4,
         letterSpacing: 1.6
     },
-
     favoritesRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginBottom: 10,
         paddingHorizontal: 4,
     },
-
     favoritePoster: {
         width: 80,
         height: 120,
         borderRadius: 6,
     },
-
     recentRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginBottom: 10,
         paddingHorizontal: 4,
     },
-
     recentItem: {
         alignItems: 'flex-start',
     },
-
     recentPoster: {
         width: 80,
         height: 120,
         borderRadius: 6,
     },
-
     ratingText: {
         color: '#9aa0a6',
         fontSize: 15,
@@ -224,7 +214,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
     },
-
     moreActivityText: {
         color: '#9aa0a6',
         fontSize: 18,
@@ -238,22 +227,18 @@ const styles = StyleSheet.create({
         marginTop: 20,
         gap: 10,
     },
-
     barsRow: {
         flexDirection: 'row',
         alignItems: 'flex-end',
         gap: 2,
     },
-
     bar: {
         width: 25,
         backgroundColor: '#2f3540',
     },
-
     starGroup: {
         flexDirection: 'row',
         alignItems: 'center',
         gap: 2,
     },
-
 });

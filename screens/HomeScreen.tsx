@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#1c2125',
     },
-
     removeAdsContainer: {
         marginTop: 15,
         paddingVertical: 10,
@@ -56,11 +55,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginBottom: -10,
     },
-
     removeAdsText: {
         color: '#7A7D80',
         fontSize: 15,
         fontWeight: '600',
     },
-
 });

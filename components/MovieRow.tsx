@@ -15,7 +15,6 @@ export default function MovieRow({ title, data }: MovieRowProps) {
                 <Ionicons name="chevron-forward" size={18} color="#7A7D80" />
             </View>
 
-
             <FlatList
                 data={data}
                 horizontal
@@ -32,19 +31,16 @@ const styles = StyleSheet.create({
         marginTop: 20,
         paddingHorizontal: 11,
     },
-
     title: {
         color: 'white',
         fontSize: 18,
         fontWeight: '700',
         marginBottom: 10,
     },
-
     header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 10,
 },
-
 });
