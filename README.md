@@ -18,14 +18,8 @@ This project includes custom top bars, tab navigation, profile layout, activity 
 
 ### UI & Styling
 - Fully custom **Letterboxd‑inspired** design
-- Dark theme using:
-  - `#14181C` (main background)
-  - `#1A1A1A` (card + tab background)
-  - `#2A2F35` (dividers)
-- Reusable top bar components:
-  - `HomeTopBar`
-  - `ProfileTopBar`
-  - `ActivityTopBar`
+- Dark theme
+- Reusable top bar components
 - Rounded tab bars with active/inactive states
 - Grey activity cards for clean feed layout
 - Consistent SafeAreaView usage across screens
