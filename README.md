@@ -12,7 +12,7 @@ This project includes custom top bars, tab navigation, profile layout, activity 
   - Home
   - Profile
   - Activity
-  - Movie Details
+  - Movie Details (Stack Navigation)
   - Search
   - Create (PlaceHolder)
 
